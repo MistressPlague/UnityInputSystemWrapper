@@ -13,12 +13,12 @@ namespace UnityEngine
 
         public static bool GetKeyDown(KeyCode key)
         {
-            return GetKBKeyByKeyCode(key).isPressed;
+            return GetKBKeyByKeyCode(key).wasPressedThisFrame;
         }
 
         public static bool GetKey(KeyCode key)
         {
-            return GetKBKeyByKeyCode(key).wasPressedThisFrame;
+            return GetKBKeyByKeyCode(key).isPressed;
         }
 
         public static bool GetMouseButtonUp(KeyCode button)
@@ -28,12 +28,12 @@ namespace UnityEngine
 
         public static bool GetMouseButtonDown(KeyCode button)
         {
-            return GetMouseButtonByKeyCode(button).isPressed;
+            return GetMouseButtonByKeyCode(button).wasPressedThisFrame;
         }
 
         public static bool GetMouseButton(KeyCode button)
         {
-            return GetMouseButtonByKeyCode(button).wasPressedThisFrame;
+            return GetMouseButtonByKeyCode(button).isPressed;
         }
 
         public static Vector2 mousePosition => new Vector2(InputSystem.GetDevice<Mouse>().position.x.ReadValue(), InputSystem.GetDevice<Mouse>().position.y.ReadValue());
